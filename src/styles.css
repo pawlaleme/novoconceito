@@ -1,0 +1,166 @@
+/* Estilos gerais */
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Cabeçalho e Rodapé */
+
+
+header h1,
+footer p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+header a {
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Seções */
+section {
+    padding: 2rem 0;
+}
+
+
+
+/* Galeria */
+.splide__slide {
+    position: relative;
+}
+
+.carousel-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal */
+#image-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#modal-image {
+    max-width: 90%;
+    max-height: 80%;
+}
+
+#close-modal {
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+
+
+    .banner h2 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+
+    .space-x-4 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .space-y-4 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Estilo para o layout responsivo */
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Contêiner de zoom */
+.zoom-container {
+    position: relative;
+    display: inline-block;
+}
+
+.zoom-container img {
+    transition: transform 0.5s ease;
+}
+
+/* Efeito de lupa */
+.zoom-container:hover img {
+    transform: scale(1.5); /* Ajuste a escala conforme necessário */
+    transform-origin: center center; /* Mantenha o zoom centrado */
+}
+.img-custom {
+    position: relative;
+    width: 250px; /* Largura do contêiner */
+    height: 100px; /* Altura do contêiner */
+    overflow: hidden; /* Oculta qualquer parte da imagem que ultrapasse o contêiner */
+    border-radius: 0.5rem; /* Bordas arredondadas do contêiner */
+ 
+}
+/* Lupa */
+.zoom-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: center;
+    /* Ajuste o tamanho e a borda da lupa conforme necessário */
+}

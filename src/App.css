@@ -1,0 +1,61 @@
+/* Importando as fontes do Google Fonts e Adobe Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trykker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wire+One&family=Ysabeau+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&family=Wire+One&family=Ysabeau+SC&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: 'Ysabeau SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+p {
+  font-family: "Enriqueta", serif;
+  font-weight: 400;
+  /* Alinha o texto à esquerda */
+
+}
+
+
+.side-bar.left {
+  left: 0;
+}
+
+.side-bar.right {
+  right: 0;
+}
+
+
+
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+
+/* Adicione isso ao seu arquivo CSS ou diretamente no componente */
+.carousel-image {
+  width: 100%;
+  /* Faz com que a imagem ocupe a largura total do slide */
+  height: 400px;
+  /* Ajuste a altura conforme necessário */
+  object-fit: cover;
+  /* Garante que a imagem cubra o contêiner sem distorção */
+}
