@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Importe o Link
 
 const Menu = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className=" bg-[#BDBDBD]  p-4">
+        <nav className="bg-[#BDBDBD] p-4">
             <div className="container mx-auto flex items-center justify-center">
                 {/* Botão do Menu Hambúrguer para Telas Pequenas */}
                 <button
@@ -25,32 +26,32 @@ const Menu = () => {
                 {/* Menu para Telas Grandes */}
                 <ul className="hidden md:flex space-x-4 items-center ">
                     <li>
-                        <a href="#home" className="text-white  hover:text-gray-400">Arquitetos</a>
+                        <Link to="/arquitetos" className="text-white hover:text-gray-400">Arquitetos</Link> {/* Atualizado para usar Link */}
                     </li>
                     <li>
-                        <a href="#produtos" className="text-white hover:text-gray-400">Produtos</a>
+                        <Link to="/produtos" className="text-white hover:text-gray-400">Produtos</Link>
                     </li>
                     <li>
-                        <a href="#carrossel" className="text-white hover:text-gray-400">Galeria</a>
+                        <Link to="/galeria" className="text-white hover:text-gray-400">Galeria</Link>
                     </li>
                     <li>
-                        <a href="#contato" className="text-white hover:text-gray-400">Contato</a>
+                        <Link to="/contato" className="text-white hover:text-gray-400">Contato</Link>
                     </li>
                 </ul>
 
                 {/* Menu Suspenso para Telas Pequenas */}
-                <ul className={`md:hidden ${isOpen ? 'block' : 'hidden'} absolute right-0 mt-2 bg-white- text-white rounded-lg shadow-lg`}>
+                <ul className={`md:hidden ${isOpen ? 'block' : 'hidden'} absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg`}>
                     <li>
-                        <a href="#home" className="block px-4 py-2 hover:bg-gray-700">Arquitetos</a>
+                        <Link to="/arquitetos" className="block px-4 py-2 hover:bg-gray-700">Arquitetos</Link> {/* Atualizado */}
                     </li>
                     <li>
-                        <a href="#produtos" className="block px-4 py-2 hover:bg-gray-700">Produtos</a>
+                        <Link to="/produtos" className="block px-4 py-2 hover:bg-gray-700">Produtos</Link>
                     </li>
                     <li>
-                        <a href="#carrossel" className="block px-4 py-2 hover:bg-gray-700">Galeria</a>
+                        <Link to="/galeria" className="block px-4 py-2 hover:bg-gray-700">Galeria</Link>
                     </li>
                     <li>
-                        <a href="#contato" className="block px-4 py-2 hover:bg-gray-700">Contato</a>
+                        <Link to="/contato" className="block px-4 py-2 hover:bg-gray-700">Contato</Link>
                     </li>
                 </ul>
             </div>

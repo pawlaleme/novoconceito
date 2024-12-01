@@ -9,7 +9,8 @@ const About = () => (
             backgroundPosition: 'center', // Centraliza a imagem
             minHeight: '20vh', // Garante que a seção ocupe toda a altura da viewport
             padding: '2rem', // Ajuste o padding conforme necessário
-            color: '#4a4a4a' // Cor padrão do texto
+            color: '#4a4a4a', // Cor padrão do texto
+            marginTop: '-2rem'
         }}
     >
         <h2 className="text-5xl font-extralight mb-4 text-yellow-600">
@@ -19,7 +20,7 @@ const About = () => (
             <div className="mt-8 md:mt-0 md:ml-8 md:w-1/2">
                 <p style={{
                     textAlign: 'left',
-                    padding: '10px',
+                    padding: '20px',
                     lineHeight: '1.6',
                     backgroundColor: 'rgba(255, 255, 255, 0.7)' // Fundo branco semi-transparente para o texto
                 }}>

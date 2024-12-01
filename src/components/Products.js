@@ -6,18 +6,26 @@ const Products = () => {
     // Referência para os itens da lista
     const { ref: listRef, inView: listInView } = useInView({
         triggerOnce: true, // A animação será acionada apenas uma vez
-        threshold: 0.1,    // O efeito é ativado quando 10% do elemento está visível
+        threshold: 0.1, // O efeito é ativado quando 10% do elemento está visível
     });
 
     // Referência para as imagens
     const { ref: imageRef, inView: imageInView } = useInView({
         triggerOnce: true, // A animação será acionada apenas uma vez
-        threshold: 0.1,    // O efeito é ativado quando 10% do elemento está visível
+        threshold: 0.1, // O efeito é ativado quando 10% do elemento está visível
     });
 
     return (
-        <section id="produtos" className="w-full p-8 bg-gray-100">
-            <div className="flex flex-col md:flex-row items-center justify-between">
+        <section
+            id="produtos"
+            className="w-full p-8 bg-gray-100"
+            style={{
+                minHeight: '80vh', // Define uma altura mínima para a seção (80% da altura da janela)
+                padding: '3rem', // Expande o espaço interno (padding)
+                marginTop: '-4rem',
+            }}
+        >
+            <div className="flex flex-col md:flex-row items-center justify-between .image-lista2">
                 {/* Coluna das Imagens */}
                 <div className="flex flex-wrap justify-center md:w-1/2 space-x-4 space-y-4">
                     <div
@@ -60,6 +68,9 @@ const Products = () => {
                     <p className="text-gray-700 mb-4">
                         Nossa seleção é cuidadosamente curada para oferecer apenas o que há de melhor em qualidade e design. Cada peça é escolhida com base em sua durabilidade, estética e funcionalidade, garantindo que você encontre opções que atendam às suas necessidades e superem suas expectativas. Aproveite as melhores ofertas e transforme seu espaço com móveis que combinam sofisticação e valor.
                     </p>
+
+            
+
                     <ul
                         className={`space-y-3 text-lg text-gray-800 fade-up ${listInView ? 'visible' : ''}`}
                         ref={listRef}

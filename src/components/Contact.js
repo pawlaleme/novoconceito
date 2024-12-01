@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -6,6 +7,9 @@ const Contact = () => {
         email: '',
         message: '',
     });
+
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1024px)' });
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1024px)' });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -32,12 +36,19 @@ const Contact = () => {
     };
 
     return (
-        <section id="contato" className=" bg-gray-100 text-center">
+        <section
+            id="contato"
+            className="bg-gray-100 text-center"
+            style={{
+                marginTop: isTabletOrMobile ? '0' : '-5rem',  // Ajuste do marginTop baseado no dispositivo
+                padding: isTabletOrMobile ? '1.5rem' : '3rem',  // Padding ajustado para dispositivos móveis
+            }}
+        >
             <h2 className="text-3xl font-bold mb-4">Contato</h2>
-            <p className="mb-4">
-                
-Entre em contato pelo formulário abaixo e descubra nossos preços imperdíveis para os móveis dos seus sonhos!<br></br> Transforme sua casa em um lugar unico       </p>
-            <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
+            <p className="mb-4 md:text-center text-center">
+                Entre em contato pelo formulário abaixo e descubra nossos preços imperdíveis para os móveis dos seus sonhos! Transforme sua casa em um lugar único.
+            </p>
+            <form onSubmit={handleSubmit} className={isTabletOrMobile ? 'max-w-sm mx-auto' : 'max-w-lg mx-auto'}>
                 <div className="mb-4">
                     <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2 text-left">
                         Nome
@@ -67,7 +78,7 @@ Entre em contato pelo formulário abaixo e descubra nossos preços imperdíveis 
                     />
                 </div>
                 <div className="mb-4">
-                    <label htmlFor="message"  className="block text-gray-700 text-sm font-bold mb-2 text-left">
+                    <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2 text-left">
                         Mensagem
                     </label>
                     <textarea
